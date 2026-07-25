@@ -6,10 +6,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version> <!-- Changed from 4.1.0 which doesn't exist -->
+		<version>3.1.5</version>
 		<relativePath />
 	</parent>
-	<groupId>com.backend</groupId> <!-- Changed to match your package -->
+	<groupId>com.backend</groupId>
 	<artifactId>lead-desk-backend</artifactId>
 	<version>1.0.0</version>
 	<name>lead-desk-backend</name>
@@ -37,8 +37,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId> <!-- Changed from
-			webmvc -->
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<!-- Database -->
@@ -67,13 +66,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Utilities -->
-		<!--<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>-->
-
 		<!-- MapStruct for DTO mapping -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -85,13 +77,6 @@
 			<artifactId>mapstruct-processor</artifactId>
 			<version>${mapstruct.version}</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<!-- Swagger/OpenAPI Documentation -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.3.0</version>
 		</dependency>
 
 		<!-- Testing -->
@@ -119,14 +104,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -136,11 +113,6 @@
 					<source>17</source>
 					<target>17</target>
 					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-							<version>${lombok.version}</version>
-						</path>
 						<path>
 							<groupId>org.mapstruct</groupId>
 							<artifactId>mapstruct-processor</artifactId>

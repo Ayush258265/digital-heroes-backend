@@ -17,18 +17,18 @@ import com.backend.service.AuthService;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
-    
-    private final AuthService authService;
+	private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 
-    public AuthController(AuthService authService) {
-        this.authService = authService;
-    }
+	private final AuthService authService;
 
-    @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO request) {
-        log.info("Login attempt for user: {}", request.getUsername());
-        LoginResponseDTO response = authService.login(request);
-        return ResponseEntity.ok(response);
-    }
+	public AuthController(AuthService authService) {
+		this.authService = authService;
+	}
+
+	@PostMapping("/login")
+	public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO request) {
+		log.info("Login attempt for user: {}", request.getUsername());
+		LoginResponseDTO response = authService.login(request);
+		return ResponseEntity.ok(response);
+	}
 }

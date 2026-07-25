@@ -5,7 +5,7 @@ import com.backend.dto.response.LoginResponseDTO;
 import com.backend.entity.AdminUser;
 import com.backend.exception.InvalidCredentialsException;
 import com.backend.repo.AdminUserRepository;
-import com.backend.security.JwtService; // Import from security package
+import com.backend.security.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,7 +18,7 @@ public class AuthService {
 
 	private final AdminUserRepository adminUserRepository;
 	private final PasswordEncoder passwordEncoder;
-	private final JwtService jwtService; // This will now work
+	private final JwtService jwtService;
 
 	public AuthService(AdminUserRepository adminUserRepository, PasswordEncoder passwordEncoder,
 			JwtService jwtService) {
