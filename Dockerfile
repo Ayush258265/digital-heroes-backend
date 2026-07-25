@@ -1,5 +1,5 @@
-# Use Eclipse Temurin OpenJDK 17
-FROM eclipse-temurin:17-jre-alpine
+# Use Eclipse Temurin OpenJDK 17 (JDK needed for building, not JRE)
+FROM eclipse-temurin:17-jdk-alpine
 
 # Set working directory
 WORKDIR /app
@@ -8,6 +8,9 @@ WORKDIR /app
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
+
+# Make mvnw executable (fixes permission denied error)
+RUN chmod +x mvnw
 
 # Download dependencies
 RUN ./mvnw dependency:go-offline -B
